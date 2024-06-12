@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, FlatList, useWindowDimensions, Button } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, useWindowDimensions, Button } from 'react-native';
 import tw from 'tailwind-react-native-classnames';
 import { useNavigation } from '@react-navigation/native';
 
@@ -53,7 +53,6 @@ const eventos = [
     imagem: "feira_artesanato.jpg"
   },
 ];
-
 const Inicial = ({ route }) => {
   const { username, message } = route.params;
   const dimensions = useWindowDimensions();
@@ -77,6 +76,22 @@ const Inicial = ({ route }) => {
         title="Equipe"
         onPress={() => navigation.navigate('equipe')}
       />
+      <TouchableOpacity
+        style={tw`bg-blue-600 py-3 px-6 rounded-lg my-2 mt-4`}
+        onPress={() => navigation.navigate('speed')}
+      >
+        <Text style={tw`text-white font-bold`}>
+          Medir Velocidade
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={tw`bg-blue-600 py-3 px-6 rounded-lg my-2 mt-4`}
+        onPress={() => navigation.navigate('magnetometro')}
+      >
+        <Text style={tw`text-white font-bold`}>
+          Magnetômetro
+        </Text>
+      </TouchableOpacity>
       <Text style={tw`text-lg font-bold mt-2 text-center text-white`}>{message}{username}</Text>
       <FlatList
         data={eventos}

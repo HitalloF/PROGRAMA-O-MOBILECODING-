@@ -7,7 +7,8 @@ import SingUp from '../screens/SignUp/index'
 import About from '../screens/About/index';
 import Inicial from '../screens/Inicial/index'
 import Equipe from '../screens/Equipe/index'
-
+import Speed from '../screens/speed/index'
+import MagnetometerScreen from '../screens/Magnetômetro/index'
 const Stack = createNativeStackNavigator();
 
 function AppNavigator() {
@@ -20,6 +21,8 @@ function AppNavigator() {
       <Stack.Screen name="login" component={LoginScreen} />
       <Stack.Screen name="inicial" component={Inicial} />
       <Stack.Screen name="equipe" component={Equipe} />
+      <Stack.Screen name="speed" component={Speed} />
+      <Stack.Screen name="magnetometro" component={MagnetometerScreen} />
     </Stack.Navigator>
   );
 }
